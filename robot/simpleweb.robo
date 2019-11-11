@@ -1,0 +1,24 @@
+*** Settings ***
+Library  SeleniumLibrary
+
+*** Test Cases ***
+Open Printer Page
+    Open Browser  http://10.37.16.150/web/guest/en/websys/webArch/mainFrame.cgi  headlesschrome
+Click Link
+    Wait Until Page Contains  DEAUGPMPC150  timeout=10
+    Click Link    xpath=(//a[@class="rollover txt-dec-no txt-algn-L imglink a_parent"])[2]
+Switch to System Page
+    Go To  http://10.37.16.150/web/guest/en/websys/webArch/getStatus.cgi
+Black Toner OK
+    Wait Until Page Contains Element  xpath://*[@id="wrap"]/div[2]/ul[3]/li/ul/li[2]/div/dl/dd/div[2]/img  timeout=20
+Cyan Toner OK
+    Wait Until Page Contains Element  xpath://*[@id="wrap"]/div[2]/ul[3]/li/ul/li[3]/div/dl/dd/div[2]/img  timeout=20
+Magenta Toner OK
+    Wait Until Page Contains Element  xpath://*[@id="wrap"]/div[2]/ul[3]/li/ul/li[4]/div/dl/dd/div[2]/img  timeout=20
+Yellow Toner OK
+    Wait Until Page Contains Element  xpath://*[@id="wrap"]/div[2]/ul[3]/li/ul/li[5]/div/dl/dd/div[2]/img  timeout=20
+    Click Element  Back
+
+    [Teardown]  Close browser
+
+*** Keywords ***
