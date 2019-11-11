@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20191108 11:49:38.613" generator="Robot 3.1.2 (Python 2.7.5 on linux2)">
+<suite source="/home/LS/frankm/develope/appperf/robot/simpleweb/simpleWeb.robot" id="s1" name="simpleWeb">
+<test id="s1-t1" name="Open Printer Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://10.37.16.150/web/guest/en/websys/webArch/mainFrame.cgi</arg>
+<arg>headlesschrome</arg>
+</arguments>
+<msg timestamp="20191108 11:49:38.801" level="INFO">Opening browser 'headlesschrome' to base url 'http://10.37.16.150/web/guest/en/websys/webArch/mainFrame.cgi'.</msg>
+<status status="PASS" endtime="20191108 11:49:45.611" starttime="20191108 11:49:38.801"></status>
+</kw>
+<status status="PASS" endtime="20191108 11:49:45.612" critical="yes" starttime="20191108 11:49:38.800"></status>
+</test>
+<test id="s1-t2" name="Click Link">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>DEAUGPMPC150</arg>
+<arg>timeout=10</arg>
+</arguments>
+<status status="PASS" endtime="20191108 11:49:45.643" starttime="20191108 11:49:45.615"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=(//a[@class="rollover txt-dec-no txt-algn-L imglink a_parent"])[2]</arg>
+</arguments>
+<msg timestamp="20191108 11:49:45.644" level="INFO">Clicking link 'xpath=(//a[@class="rollover txt-dec-no txt-algn-L imglink a_parent"])[2]'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20191108 11:49:45.747" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20191108 11:49:45.747" starttime="20191108 11:49:45.663"></status>
+</kw>
+<msg timestamp="20191108 11:49:45.748" level="FAIL">Link with locator 'xpath=(//a[@class="rollover txt-dec-no txt-algn-L imglink a_parent"])[2]' not found.</msg>
+<status status="FAIL" endtime="20191108 11:49:45.748" starttime="20191108 11:49:45.643"></status>
+</kw>
+<status status="FAIL" endtime="20191108 11:49:45.749" critical="yes" starttime="20191108 11:49:45.613">Link with locator 'xpath=(//a[@class="rollover txt-dec-no txt-algn-L imglink a_parent"])[2]' not found.</status>
+</test>
+<test id="s1-t3" name="Switch to System Page">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>http://10.37.16.150/web/guest/en/websys/webArch/getStatus.cgi</arg>
+</arguments>
+<msg timestamp="20191108 11:49:45.750" level="INFO">Opening url 'http://10.37.16.150/web/guest/en/websys/webArch/getStatus.cgi'</msg>
+<status status="PASS" endtime="20191108 11:49:49.284" starttime="20191108 11:49:45.750"></status>
+</kw>
+<status status="PASS" endtime="20191108 11:49:49.285" critical="yes" starttime="20191108 11:49:45.749"></status>
+</test>
+<test id="s1-t4" name="Black Toner OK">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>xpath://*[@id="wrap"]/div[2]/ul[3]/li/ul/li[2]/div/dl/dd/div[2]/img</arg>
+<arg>timeout=20</arg>
+</arguments>
+<status status="PASS" endtime="20191108 11:49:49.313" starttime="20191108 11:49:49.287"></status>
+</kw>
+<status status="PASS" endtime="20191108 11:49:49.313" critical="yes" starttime="20191108 11:49:49.286"></status>
+</test>
+<test id="s1-t5" name="Cyan Toner OK">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>xpath://*[@id="wrap"]/div[2]/ul[3]/li/ul/li[3]/div/dl/dd/div[2]/img</arg>
+<arg>timeout=20</arg>
+</arguments>
+<status status="PASS" endtime="20191108 11:49:49.337" starttime="20191108 11:49:49.315"></status>
+</kw>
+<status status="PASS" endtime="20191108 11:49:49.337" critical="yes" starttime="20191108 11:49:49.314"></status>
+</test>
+<test id="s1-t6" name="Magenta Toner OK">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>xpath://*[@id="wrap"]/div[2]/ul[3]/li/ul/li[4]/div/dl/dd/div[2]/img</arg>
+<arg>timeout=20</arg>
+</arguments>
+<status status="PASS" endtime="20191108 11:49:49.361" starttime="20191108 11:49:49.339"></status>
+</kw>
+<status status="PASS" endtime="20191108 11:49:49.361" critical="yes" starttime="20191108 11:49:49.338"></status>
+</test>
+<test id="s1-t7" name="Yellow Toner OK">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>xpath://*[@id="wrap"]/div[2]/ul[3]/li/ul/li[5]/div/dl/dd/div[2]/img</arg>
+<arg>timeout=20</arg>
+</arguments>
+<status status="PASS" endtime="20191108 11:49:49.380" starttime="20191108 11:49:49.362"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>Back</arg>
+</arguments>
+<msg timestamp="20191108 11:49:49.381" level="INFO">Clicking element 'Back'.</msg>
+<status status="PASS" endtime="20191108 11:49:53.681" starttime="20191108 11:49:49.381"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20191108 11:49:53.741" starttime="20191108 11:49:53.681"></status>
+</kw>
+<status status="PASS" endtime="20191108 11:49:53.741" critical="yes" starttime="20191108 11:49:49.362"></status>
+</test>
+<status status="FAIL" endtime="20191108 11:49:53.742" starttime="20191108 11:49:38.614"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="6">Critical Tests</stat>
+<stat fail="1" pass="6">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="simpleWeb" pass="6">simpleWeb</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
