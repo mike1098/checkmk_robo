@@ -1,0 +1,35 @@
+    #!/usr/bin/env python
+    """ Check_mk plugin to run Robot Framework Tests
+    Written by Michael FRANK (michael.frank@faurecia.com)
+    """
+    import sys
+    from robot import run
+    from robot.api import ExecutionResult, ResultVisitor
+
+    # The directory where the test results are
+    outdir='/var/local/robot'
+
+    class ExecutionTimeChecker(ResultVisitor):
+
+        def __init__(self, max_seconds):
+            self.max_milliseconds = max_seconds * 1000
+             
+        def visit_test(self, test):
+            print '<<<robot>>>'
+            print 'Test Name: %s Elapsed Time: %s seconds Test Status: %s\n' % (test.name, test.elapsedtime / 1000,test.status)
+            
+
+
+    def check_tests(seconds, inpath):
+        result = ExecutionResult(inpath)
+        result.visit(ExecutionTimeChecker(float(seconds)))
+        
+
+
+    if __name__ == '__main__':
+        try:
+            run('/usr/local/lib/robot/', outputdir=outdir, log='none', console='none')
+            check_tests(10,'%s/output.xml' % outdir)
+        except TypeError:
+            print __doc__
+
